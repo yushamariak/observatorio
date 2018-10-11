@@ -1,25 +1,43 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+//import axios from "axios";
+import instituicoes from './mock/instituicoes';
+
+import ObservatorioMenu from './components/ObservatorioMenu/ObservatorioMenu.js';
+import Cloud from './components/TagCloud/Cloud.js';
+//import Instituicoes from './components/Instituicoes/Instituicoes';
 
 class App extends Component {
+
+  componentDidMount() {
+    // axios.get("/instituicoes.json", {}).then((res) => {
+    //   //on success
+    //   console.log(res);
+
+    //   this.setInstituicoes({
+    //     instituicoes: res.data
+    //   });
+    // }).catch((error) => {
+    //   //on error
+    //   alert("There is an error in API call.");
+    //   console.log(error);
+    // });
+    console.log(instituicoes);
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <ObservatorioMenu></ObservatorioMenu>
+        
+        <div><h2>Página Inicial</h2>
+        <p>{instituicoes[0].id}</p>
+        <p>{instituicoes[0].nome}</p>
+        <p>{instituicoes[0].quantidadeProfessores}</p>
+        <p>{instituicoes[0].sigla}</p></div>
+
+        <Cloud></Cloud>
+        
       </div>
     );
   }
