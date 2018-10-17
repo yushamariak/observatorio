@@ -5,7 +5,6 @@ import instituicoes from './mock/instituicoes';
 
 import ObservatorioMenu from './components/ObservatorioMenu/ObservatorioMenu.js';
 import Cloud from './components/TagCloud/Cloud.js';
-//import Instituicoes from './components/Instituicoes/Instituicoes';
 
 class App extends Component {
 
