@@ -7,7 +7,12 @@ var arr = [];
 
 for (var obj of arrIndicadores) {
 
-  arr.push({ value: obj.palavra, count: obj.quantidade});
+  arr.push(
+    { 
+      value: obj.palavra,
+      count: obj.quantidade
+    }
+  );
 }
 
 export default class Cloud extends Component {
@@ -16,14 +21,13 @@ export default class Cloud extends Component {
     return (
       <div>
         <TagCloud 
-          minSize={12}
-          maxSize={35}
-          tags={arr}
+          minSize = {12}
+          maxSize = {35}
+          tags    = {arr}
           //onClick={tag => alert(`'${tag.value}' was selected!`)}
-          >
-          </TagCloud>
+        >
+        </TagCloud>
       </div>
-
     );
   }
 }
