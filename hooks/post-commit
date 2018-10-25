@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Check the files if there are console.log references
+FILES_PATTERN='\.(js)(\..+)?$'
+FORBIDDEN='console\.[clear|dir|log|info|warn|error]'
+
+git diff --cached --name-only | \
+grep -E $FILES_PATTERN | \
+xargs grep --with-filename -n $FORBIDDEN | \
+grep -v '//' && echo 'COMMIT REJECTED!  Found console.log references. Please remove them before committing.' && exit 1
+echo $FILES_PATTERN
