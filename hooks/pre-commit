@@ -1,6 +1,6 @@
 #!/bin/sh
-echo "Executing post-commit checks..."
 
+# Check the files if there are console.log references
 FILES_PATTERN='\.(js)(\..+)?$'
 FORBIDDEN='console\.[clear|dir|log|info|warn|error]'
 
