@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Executed immediately after a git checkout
+path=`git rev-parse --show-toplevel`
+repository_name=`basename $path`
+
+current_branch=`git rev-parse --abbrev-ref HEAD`
+present_working_directory=`pwd`
+
+echo "Pulling remote branch ....."
+
+git pull origin $current_branch
+
+echo
+
+#echo "Installing dependencies ....."
+#npm install
