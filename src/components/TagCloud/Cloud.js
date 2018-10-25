@@ -5,6 +5,8 @@ import indicadores from "./../../mock/indicadoresInstituicoes.json";
 var arrIndicadores = indicadores.listaPalavraChave;
 var arr = [];
 
+var a = [];
+
 for (var obj of arrIndicadores) {
 
   arr.push(
