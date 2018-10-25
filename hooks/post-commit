@@ -11,7 +11,7 @@ if git diff --cached --name-only | \
     xargs grep --with-filename -n $FORBIDDEN | \
     grep -v '//';
 then
-    echo 'COMMIT REJECTED!  Found console. references. Please remove them before committing.'
+    echo 'COMMIT REJECTED!  Found console.log references. Please remove them before committing.'
     exit 1;
 fi
 exit 0;
