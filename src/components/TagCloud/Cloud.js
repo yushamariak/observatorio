@@ -15,7 +15,6 @@ for (var obj of arrIndicadores) {
       count: obj.quantidade
     }
   );
-  console.log('te peguei , otário!');
 }
 
 export default class Cloud extends Component {
